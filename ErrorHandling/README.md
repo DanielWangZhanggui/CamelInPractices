@@ -1,1 +1,1 @@
-Set up some cases about Erroring Handling
+Set up some cases about Error Handling
