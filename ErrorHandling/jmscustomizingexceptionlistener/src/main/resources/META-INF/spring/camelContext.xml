@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    
+     <bean id="activemq" 
+      class="org.apache.activemq.camel.component.ActiveMQComponent">
+      <property name="brokerURL" value="tcp://127.0.0.1:61616"/>
+      <property name="exceptionListener" ref="jmsExceptionListener"></property>
+      </bean>
+    <bean id="jmsExceptionListener" class="mq.test.dan.JMSCustomizingExceptionListener"></bean>
+
+    <!-- START SNIPPET: e2 -->
+    <camelContext id="camelContext" xmlns="http://camel.apache.org/schema/spring">
+   <!-- <onException>
+        	<exception>java.lang.Exception</exception>
+        	<handled>
+      				<constant>true</constant>
+    		</handled>
+    		<process ref="orderService"/>
+    		
+        </onException> --> 
+        <route>
+            <from uri="activemq:queue:start"/>
+            <log message="Me Got ${body}"/>
+            <to uri="activemq:queue:end"/>
+           <!-- <throwException ref="exception1"></throwException>  --> 
+        </route>
+    </camelContext>
+
+</beans>
