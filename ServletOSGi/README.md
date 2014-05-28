@@ -11,6 +11,5 @@
 ~~~
 - config:cancel 
 
-Post a request to localhost:8181/hello 
-
+Post a request to http://localhost:8181/camel/services/hello
 
