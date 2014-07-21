@@ -1,0 +1,25 @@
+## 1.2 入门
+在这本节，我们将为您讲述如何使用Camel发行包，解释里面会有什么，然后带着家用Apache Maven跑一个例子。在了解这些之后， 您就会知道怎么去跑这本书里所有的例子了。 
+让我开始看看Camel发行包吧。 
+### 1.2.1 获取Camel
+Camel可以从Apache Camel官方网站http://camel.apache.org/download.html可以下载到，在那个页面上可以找到所有Camel的发行版本，当然还提供了最新版本下载。
+在本书中， 我们使用的是Camel 2.5.0。要获取这个版本，可以访问Camel 2.5.0 Release链接[1]，或者靠近页面底部可以找到两种发行包，一个是Windows的，另一个是Unxi/Linux/Cygwin。在下载完之后请解压您的硬盘上。
+打开一个命令行终端，跳转到刚才解压路径下，运行一下显示当前目录清单命令，您将会看到差不多这样的信息：
+~~~
+janstey@mojo:~/apache-camel-2.5.0$ ls
+doc examples lib LICENSE.txt NOTICE.txt README.txt
+~~~
+正如您所见，它的发行包非常简洁，可能现您已经猜到里面是什么了，我们来看看具体的详细信息：
+－ doc		它里面包含的是Camel 的PDF和HTML两种格式的用户手册，这个用户手册是本次发行时Apache Camel Wiki大部分内容，有了它，对于那些不能访问Apache Camel网站的用户是个利好消息。 
+- examples	包括27个例子，您可以简单看看这些例子。
+- lib		包括所有Camel的库文件以及Camel Core运行需要的第三方库。稍后您就会看到如何用Maven快捷的获取Core 外的Components依赖。
+- LICENESE.txt  Camel发行包里的许可证，因为它是个Apache 项目，所以这个许可证是Apache License 2.0。
+- NOTICFE.txt	Camel发行包里的第三方信赖的版本信息
+- README.txt	简短的描述Camel是什么，还有一些帮助准备学习Camel用户的成长更快的链接
+接下来我们跑一个Camel的例子
+
+
+
+
+
+[1]这个版本在这个页面里已经找不到了，现在的是Camel 2.13.2 Release.也有可能是更新的版本。它代表的是Camel目前最新的发行版本。
